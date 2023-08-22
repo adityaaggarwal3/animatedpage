@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.intro{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    z-index: 9;
+    animation: showIntro 5s linear;
+}
+
+@keyframes showIntro {
+    0%{
+        opacity: 1;
+    }
+    90%{
+        transform: translateX(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(100%);
+    }
+    
+}
+
+.intro .introbg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.introbg video{
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.introContent{
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    font-family: sans-serif;
+}
+
+.introContent img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.title{
+    font-size: 100px;
+    font-weight: bold;
+    margin: 20px 0;
+    opacity: 0;
+    text-shadow: 0 10px 10px gray;
+    animation: title 1s 1s, opacity 5s linear;
+}
+
+@keyframes title {
+    0%{
+        transform: translateX(-120%);
+    }
+    100%{
+        transform: translateX(0%);
+    } 
+}
+
+@keyframes opacity {
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    } 
+}
+
+.subheading{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 20px 0;
+    opacity: 0;
+    text-shadow: 0 5px 5px gray;
+    animation: sub 1s 2s, opacity 5s 1s linear;
+}
+
+@keyframes sub{
+    0%{
+        transform: translateX(120%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.animatedBase{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url("./assets/city.png") no-repeat;
+    background-size: cover;
+    opacity: 0;
+    animation: displayCity 15s linear 4s;
+}
+
+@keyframes displayCity {
+    0%,100%{
+        opacity: 1;
+    }
+}
+
+.bird{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    background: url("./assets/bird.png");
+    width: 100px;
+    height: 69px;
+    animation: birdfly 1s steps(4) infinite 4s, movebird 8s linear infinite 4s;
+}
+
+@keyframes birdfly {
+    0%{
+        background-position: 0;
+    }    
+    100%{
+        background-position: 400px;
+    }
+}
+
+@keyframes movebird{
+    0%{
+        left: -10%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+.car1{
+    position: absolute;
+    bottom: 45%;
+    /* left: 20%; */
+    width: 640px;
+    height: 320px;
+    background: url("./assets/car1.png");
+    animation: car1 3s linear 6s;
+    opacity: 0;
+    z-index: 2; 
+}
+
+@keyframes car1{
+    0%{
+        left: -20%;
+        opacity: 1;
+    }    
+    99%{
+        opacity: 1;
+    }    
+    100%{
+        left: 120%;
+        opacity: 0;
+    }
+}
+.car2{
+    position: absolute;
+    bottom: 30%;
+    /* right: 20%; */
+    width: 640px;
+    height: 320px;
+    background: url("./assets/car2.png");
+    animation: car2 6s linear 5s 2;
+    opacity: 0;
+    z-index: 5;
+}
+
+@keyframes car2{
+    0%{
+        right: -20%;
+        opacity: 1;
+    }    
+    99%{
+        opacity: 1;
+    }    
+    100%{
+        right: 120%;
+        opacity: 0;
+    }
+}
+
+.car3{
+    position: absolute;
+    bottom: 48%;
+    /* right: 20%; */
+    width: 640px;
+    height: 320px;
+    background: url("./assets/car3.png");
+    animation: car1 4s linear 8s 2;
+    opacity: 0;
+    z-index: 2;
+}
+
+.car4{
+    position: absolute;
+    bottom: 30%;
+    right: 20%;
+    width: 640px;
+    height: 320px;
+    background: url("./assets/car4.png");
+    animation: car2 6s linear 8s;
+    opacity: 0;
+    z-index: 5;
+}
+
+.boy{
+    position: absolute;
+    top: 18%;
+    right: 20%;
+    background: url("./assets/boy_walk1.png");
+    width: 275px;
+    height: 251px;
+    animation: boywalk 1s steps(15) infinite, moveboy 15s linear infinite 4s;
+}
+
+@keyframes boywalk{
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 4098px;
+    }
+}
+
+@keyframes moveboy{
+    0%{
+        left: -10%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+.girl{
+    position: absolute;
+    bottom: 25%;
+    right: 20%;
+    background: url("./assets/girl_walk1.png");
+    width: 230px;
+    height: 250px;
+    z-index: 9;
+    transform: rotateY(180deg);
+    animation: girlwalk 1s steps(20) infinite, movegirl 15s linear infinite 4s;
+}
+
+@keyframes girlwalk{
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 4583px;
+    }
+}
+
+@keyframes movegirl{
+    0%{
+        right: 0%;
+    }
+    100%{
+        right: 110%;
+    }
+}
+
+.animationfinal{
+    position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 200;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	opacity: 1;
+	color: #fff;
+	animation: invisible 14s linear, display 3s ease 14s;
+	background-color: #000;
+}
+
+.animationfinal h1{
+    font-size: 100px;
+	z-index: 5;
+	text-shadow: 0 0 10px white;
+}
+
+.snow-bg{
+    position: absolute;
+	top: 0;
+	left: 0;
+	animation: invisible 19s linear, display 3s ease 19s;
+	opacity: 1;
+}
+
+.snow-bg video
+{
+	min-height: 100%;
+	min-width: 100%;
+}
+
+@keyframes invisible
+{
+	0%,100%
+	{
+		opacity: 0;
+	}
+}
+
+@keyframes display
+{
+	0%
+	{
+		transform:translate(0,-100%);
+	}
+	100%
+	{
+		transform:translate(0,0);
+	}
+}
+
